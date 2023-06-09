@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "bankstatement-copilot"
+version = "0.1.0"
+description = ""
+authors = ["lucas-shao <lucas_shao@126.com>"]
+readme = "README.md"
+packages = [{include = "bankstatement_copilot"}]
+
+[tool.poetry.dependencies]
+python = "^3.9.16"
+langchain = "^0.0.188"
+openai = "^0.27.7"
+tiktoken = "^0.4.0"
+pandas = "^2.0.2"
+openpyxl = "^3.1.2"
+matplotlib = "^3.7.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
