@@ -1,0 +1,2 @@
+# bankstatementcopilot
+analyse bankstatement
