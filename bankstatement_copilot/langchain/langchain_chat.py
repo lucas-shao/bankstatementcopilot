@@ -113,11 +113,11 @@ SEARCH_TEMPLATE = """
     帮我搜索并总结{search_name}的信息，包括公司的基本信息，行业信息或者个人的基本信息
     按照如下步骤：
     1、先从google上搜索信息，判断是一个公司企业，还是一个人
-    2、如果是英国的一家公司企业，请帮我使用uk Company搜索这个公司的信息
+    2、如果是英国的一家公司企业，请帮我抽取对应的公司名称，使用uk Company搜索这个公司的信息
 """
 
 if __name__ == "__main__":
     openaiagentmodule = LangchainAgent()
-    search_name = "Fabric - 77a Charterhouse St, London "
+    search_name = "VAMP SOCIAL LTD. ref: VAMP VAMP "
     search_text = SEARCH_TEMPLATE.format(search_name=search_name)
     print(openaiagentmodule.chat(search_text))
