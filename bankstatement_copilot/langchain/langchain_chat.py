@@ -109,15 +109,15 @@ class LangchainAgent:
         return reply
 
 
+SEARCH_TEMPLATE = """
+    帮我搜索并总结{search_name}的信息，包括公司的基本信息，行业信息或者个人的基本信息
+    按照如下步骤：
+    1、先从google上搜索信息，判断是一个公司企业，还是一个人
+    2、如果是英国的一家公司企业，请帮我使用uk Company搜索这个公司的信息
+"""
+
 if __name__ == "__main__":
     openaiagentmodule = LangchainAgent()
-    print(
-        openaiagentmodule.chat(
-            """
-            帮我搜索并总结「www.asos.com - GREATER LONDON HOUSE, 02077561000」的信息，请告诉我这个是一个公司企业还是一个地点还是一个人
-            按照如下步骤：
-            1、先从google上搜索信息，判断是一个公司企业，还是一个人
-            2、如果是英国的一家公司企业，请帮我使用uk Company搜索这个公司的信息
-            """
-        )
-    )
+    search_name = "Fabric - 77a Charterhouse St, London "
+    search_text = SEARCH_TEMPLATE.format(search_name=search_name)
+    print(openaiagentmodule.chat(search_text))
