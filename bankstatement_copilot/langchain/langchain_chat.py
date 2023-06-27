@@ -12,6 +12,7 @@ from langchain.utilities import SerpAPIWrapper
 from langchain.agents import initialize_agent
 from langchain.agents import AgentType
 from langchain.agents.agent import AgentOutputParser
+from bankstatement_copilot.langchain.tools.uk_company_search import UkCompanyHouseSearch
 from typing import Any
 import json
 import openai
@@ -66,12 +67,18 @@ class MyAgentOutputParser(AgentOutputParser):
 class LangchainAgent:
     def __init__(self):
         self.openai_api_key = openai_api_key
+        self.getUkCompanySearchTool = UkCompanyHouseSearch()
         search = SerpAPIWrapper(serpapi_api_key=os.environ["SERPER_API_KEY"])
         self.tools = [
             Tool(
                 name="Google Search",
                 func=search.run,
                 description="useful for when you need to answer questions about current events or the current state of the world. the input to this should be a single search term.",
+            ),
+            Tool(
+                name=self.getUkCompanySearchTool.name,
+                func=self.getUkCompanySearchTool.run,
+                description=self.getUkCompanySearchTool.desscription,
             ),
         ]
 
@@ -106,6 +113,11 @@ if __name__ == "__main__":
     openaiagentmodule = LangchainAgent()
     print(
         openaiagentmodule.chat(
-            "帮我在英国查找关于「THE BOX」的信息，可以从对应的官方网站，可以从uk Companyhouse，最后给我一个简单的总结"
+            """
+            帮我搜索并总结「www.asos.com - GREATER LONDON HOUSE, 02077561000」的信息，请告诉我这个是一个公司企业还是一个地点还是一个人
+            按照如下步骤：
+            1、先从google上搜索信息，判断是一个公司企业，还是一个人
+            2、如果是英国的一家公司企业，请帮我使用uk Company搜索这个公司的信息
+            """
         )
     )
