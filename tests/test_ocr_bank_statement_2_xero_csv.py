@@ -7,8 +7,7 @@ from bankstatement_copilot.http.bkp_client import ocrBankStatement
 from bankstatement_copilot.http.model.ocr_request import OcrRequest
 
 bank_statement_file_url_list = [
-    "https://oss.xiaocichang.com/file/20231114/attachment%20TIDE%20JUL.pdf",
-    "https://oss.xiaocichang.com/file/20231114/Tide%20statement%202023%2011.pdf",
+    "https://oss.xiaocichang.com/file/20231114/attachment%20TIDE%20AUG.pdf",
 ]
 
 out_file_path = "/Users/shaoshuai.shao/Desktop/xero.csv"
@@ -40,7 +39,9 @@ async def main():
                 [
                     {
                         "Date": bankStatementLine.date,
-                        "Description": bankStatementLine.description,
+                        "Description": bankStatementLine.description
+                        + " . "
+                        + bankStatementLine.transactionType,
                         "Amount": bankStatementLine.amount,
                         "Balance": bankStatementLine.balance,
                     }
@@ -55,6 +56,8 @@ async def main():
             out_file_path,
             index=False,
         )
+
+        print("Xero CSV file generated successfully! " + out_file_path)
 
 
 asyncio.run(main())
