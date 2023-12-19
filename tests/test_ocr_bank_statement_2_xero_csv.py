@@ -7,7 +7,7 @@ from bankstatement_copilot.http.bkp_client import ocrBankStatement
 from bankstatement_copilot.http.model.ocr_request import OcrRequest
 
 bank_statement_file_url_list = [
-    "https://oss.xiaocichang.com/file/20231114/attachment%20TIDE%20AUG.pdf",
+    "https://oss.xiaocichang.com/file/20231218/Tide%20statement%20Oct%202023.pdf",
 ]
 
 out_file_path = "/Users/shaoshuai.shao/Desktop/xero.csv"

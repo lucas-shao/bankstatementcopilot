@@ -26,8 +26,10 @@ class OcrHungryPandaPaymentStatement(BaseModel):
     vatVoucherAndRefundAmount: str = None
     discountMerchantNormalAndRefundAmount: str = None
     discountMerchantVoucherAndRefundAmount: str = None
-    deliveryFeeNormalAndRefundAmount: str = None
-    deliveryFeeVoucherAndRefundAmount: str = None
+    deliveryFeeMerchantNormalAndRefundAmount: str = None
+    deliveryFeeMerchantVoucherAndRefundAmount: str = None
+    deliveryFeeCustomerNormalAndRefundAmount: str = None
+    deliveryFeeCustomerVoucherAndRefundAmount: str = None
     merchantOtherIncomeNormalAndRefundAmount: str = None
     merchantOtherIncomeVoucherAndRefundAmount: str = None
     adjustmentNormalAndRefundAmount: str = None
