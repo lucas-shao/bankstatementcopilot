@@ -13,7 +13,7 @@ from bankstatement_copilot.http.model.ocr_request import OcrRequest
 pdf_url_prefix = "https://oss.xiaocichang.com/file/hungry_panda_20231215/"
 
 # PDF文件夹路径
-directory = "/Users/shaoshuai.shao/Downloads/HP/"
+directory = "/Users/shaoshuai.shao/Downloads/Hungry Panda/"
 
 # 已经处理完毕的PDF文件夹路径
 processed_file_directory = directory + "processed/"
