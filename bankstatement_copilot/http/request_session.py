@@ -5,7 +5,7 @@ import aiohttp
 
 @contextlib.asynccontextmanager
 async def getClientSession():
-    session = aiohttp.ClientSession("http://8.211.11.142:8000")
+    session = aiohttp.ClientSession("http://47.251.43.146:8000")
     try:
         yield session
     except Exception as e:

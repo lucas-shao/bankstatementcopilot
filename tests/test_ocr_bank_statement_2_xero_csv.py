@@ -7,10 +7,10 @@ from bankstatement_copilot.http.bkp_client import ocrBankStatement
 from bankstatement_copilot.http.model.ocr_request import OcrRequest
 
 bank_statement_file_url_list = [
-    "https://oss.xiaocichang.com/file/20231218/Tide%20statement%20Oct%202023.pdf",
+    "https://assets.pinvo.ai/assets/file/20240408/3eeb63da-2a92-4f89-8a66-954365b67ebf.pdf",
 ]
 
-out_file_path = "/Users/shaoshuai.shao/Desktop/xero.csv"
+out_file_path = "/Users/shaoshuai.shao/Desktop/countingup-202311.csv"
 
 # 自定义列名
 column_names = ["Date", "Description", "Amount", "Balance"]
