@@ -7,10 +7,10 @@ from bankstatement_copilot.http.bkp_client import ocrBankStatement
 from bankstatement_copilot.http.model.ocr_request import OcrRequest
 
 bank_statement_file_url_list = [
-    "https://assets.pinvo.ai/assets/file/20240408/3eeb63da-2a92-4f89-8a66-954365b67ebf.pdf",
+    "https://assets.pinvo.ai/assets/file/20240420/AEBPC-3.pdf",
 ]
 
-out_file_path = "/Users/shaoshuai.shao/Desktop/countingup-202311.csv"
+out_file_path = "/Users/shaoshuai.shao/Desktop/AEBPC-3.csv"
 
 # 自定义列名
 column_names = ["Date", "Description", "Amount", "Balance"]
@@ -28,6 +28,10 @@ async def main():
         print(res)
 
         bankStatementLines.extend(res.data.bankStatementLineList)
+
+    if bankStatementLines == None or len(bankStatementLines) == 0:
+        print("No bank statement lines found!")
+        return
 
     if bankStatementLines != None and len(bankStatementLines) > 0:
         # 创建一个空的DataFrame，并指定列名

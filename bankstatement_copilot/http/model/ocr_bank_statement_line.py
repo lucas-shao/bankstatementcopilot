@@ -1,5 +1,5 @@
 from pydantic import BaseModel
-from typing import Generic, TypeVar
+from typing import Generic, Optional, TypeVar
 
 
 class OcrBankStatementLine(BaseModel):
@@ -10,8 +10,8 @@ class OcrBankStatementLine(BaseModel):
     """ 交易金额 """
     amount: str = None
     """ 交易类型 """
-    transactionType: str = None
+    transactionType: Optional[str] = None
     """ 交易备注 """
     description: str = None
     """ 交易余额 """
-    balance: str = None
+    balance: Optional[str] = None
