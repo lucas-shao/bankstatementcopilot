@@ -11,7 +11,7 @@ from bankstatement_copilot.http.model.ocr_request import OcrRequest
 
 
 # csv文件夹路径
-directory = "/Users/shaoshuai.shao/Downloads/Hungry Panda/csv/"
+directory = "/Users/shaoshuai.shao/Downloads/Hungry_Panda_20240605/csv/"
 
 # 生成的csv文件路径
 out_file_dir = directory + "result/"

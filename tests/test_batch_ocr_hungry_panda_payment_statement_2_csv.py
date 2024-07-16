@@ -10,10 +10,10 @@ from bankstatement_copilot.http.bkp_client import (
 from bankstatement_copilot.http.model.ocr_request import OcrRequest
 
 # PDF的URL前缀
-pdf_url_prefix = "https://oss.xiaocichang.com/file/hungry_panda_20231215/"
+pdf_url_prefix = "https://oss.xiaocichang.com/file/hungry_panda_20240605/"
 
 # PDF文件夹路径
-directory = "/Users/shaoshuai.shao/Downloads/Hungry Panda/"
+directory = "/Users/shaoshuai.shao/Downloads/Hungry_Panda_20240605/"
 
 # 已经处理完毕的PDF文件夹路径
 processed_file_directory = directory + "processed/"
